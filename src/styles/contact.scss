@@ -29,6 +29,10 @@
     text-align: center;
   }
 
+  .contact-item__title {
+    font-size: 1.7rem;
+    margin-bottom: 0.6rem;
+  }
   .contact-item__subtitle {
     font-size: 1.2rem;
   }
@@ -43,6 +47,14 @@
     padding: 10px;
   }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #contact .contact__container {
+    flex-direction: column;
+  }
+}
+
 .hovicon {
   display: inline-block;
   font-size: 45px;

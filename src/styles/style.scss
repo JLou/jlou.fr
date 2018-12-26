@@ -14,7 +14,7 @@
 // * {
 //   border: 1px solid rgba(0, 0, 0, 0.3);
 // }
-
+@import "reset";
 @import "colors";
 @import "nav.scss";
 @import "about";
@@ -69,12 +69,16 @@ section:nth-child(2n + 1)::after {
 section {
   padding-bottom: 70px;
   overflow: hidden;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 body section:last-of-type::after {
   border: none;
 }
 h1 {
-  border-bottom: $highlight-color 2px solid;
+  text-decoration: $highlight-color underline;
+
+  // border-bottom: $highlight-color 2px solid;
   font-size: 5rem;
   margin: 0 0 0 2em;
   font-family: "Poppins", sans-serif;
@@ -85,10 +89,12 @@ h1 {
   font-family: "Scope One", serif;
   border-bottom: 2px $highlight-color solid;
   margin-bottom: 1rem;
+  font-size: 3rem;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 
   &:hover {
     text-decoration: none;
@@ -98,5 +104,29 @@ a {
   &:hover::selection {
     background-color: $secondary-color;
     text-decoration: underline;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    border: none;
+  }
+  header {
+    height: 220px;
+
+    div {
+      height: auto;
+      margin-top: 40px;
+    }
+  }
+
+  .section__title {
+    font-size: 2rem;
+    line-break: strict;
   }
 }
