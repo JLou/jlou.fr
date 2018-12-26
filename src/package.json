@@ -1,0 +1,21 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Jean-Lou PIERME",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build -d ../../resume index.html"
+  },
+  "devDependencies": {
+    "cssnano": "4.1.8",
+    "sass": "1.15.2",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "jquery": "3.3.1",
+    "jquery-circle-progress": "^1.2.2",
+    "wow.js": "1.2.2"
+  }
+}

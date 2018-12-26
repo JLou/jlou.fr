@@ -1,0 +1,102 @@
+/*
+
+#F1E0C4,
+#FF6600,
+#6A7372,
+#648285,
+#CE534D,
+#F1E0C4,
+#FF6600,
+#6A7372
+
+*/
+
+// * {
+//   border: 1px solid rgba(0, 0, 0, 0.3);
+// }
+
+@import "colors";
+@import "nav.scss";
+@import "about";
+@import "skills";
+@import "contact";
+::selection {
+  background: $highlight-color; /* WebKit/Blink Browsers */
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+  background: $background-color;
+  color: rgb(68, 71, 71);
+  font-family: "Karla", sans-serif;
+}
+
+header {
+  background: url("../img/beach.jpg") fixed padding-box;
+  background-size: auto;
+  background-position: center;
+  height: 450px;
+  width: 100%;
+  color: $background-color;
+  position: relative;
+  overflow: hidden;
+}
+header div {
+  height: calc(100% - 172px);
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+}
+
+header::after,
+section::after {
+  content: "";
+  clear: both;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+  border-bottom: 50px solid $background-color;
+  border-left: 100vw solid rgba(0, 0, 0, 0);
+}
+section:nth-child(2n + 1)::after {
+  border-bottom-color: $secondary-background;
+}
+section {
+  padding-bottom: 70px;
+  overflow: hidden;
+}
+body section:last-of-type::after {
+  border: none;
+}
+h1 {
+  border-bottom: $highlight-color 2px solid;
+  font-size: 5rem;
+  margin: 0 0 0 2em;
+  font-family: "Poppins", sans-serif;
+}
+
+.section__title {
+  text-align: center;
+  font-family: "Scope One", serif;
+  border-bottom: 2px $highlight-color solid;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: $highlight-color;
+  }
+
+  &:hover::selection {
+    background-color: $secondary-color;
+    text-decoration: underline;
+  }
+}
