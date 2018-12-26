@@ -6,16 +6,16 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build -d ../../resume index.html"
+    "prod": "parcel build index.html -d .."
   },
   "devDependencies": {
     "cssnano": "4.1.8",
-    "sass": "1.15.2",
-    "typescript": "^3.2.2"
+    "sass": "1.15.2"
   },
   "dependencies": {
     "jquery": "3.3.1",
     "jquery-circle-progress": "^1.2.2",
+    "parcel-plugin-imagemin": "2.1.1",
     "wow.js": "1.2.2"
   }
 }
