@@ -1,16 +1,17 @@
 #about {
-  display: flex;
+  // display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  // padding: 0 10vw;
 
   .about__img {
     padding: 20px;
     display: block;
     flex-basis: 200%;
     max-width: 300px;
+    float: left;
+    shape-outside: circle(50%);
     img {
       width: 100%;
       border-radius: 50%;
@@ -18,15 +19,29 @@
     }
   }
 
+  h2 {
+    margin-left: 300px;
+  }
+
   .about__content {
     flex-grow: 1;
     p {
       padding: 0 3vw;
+      position: relative;
+      font-size: 1.3rem;
     }
   }
 }
 @media only screen and (max-width: 600px) {
   #about {
     flex-direction: column;
+    display: flex;
+    .about__img {
+      float: none;
+    }
+
+    h2 {
+      margin-left: 0;
+    }
   }
 }
