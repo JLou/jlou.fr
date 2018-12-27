@@ -1,0 +1,32 @@
+#journey {
+  .journey-articles {
+    display: flex;
+    flex-wrap: wrap;
+    // flex-flow: row;
+    justify-content: space-around;
+  }
+
+  .journey__container {
+    min-width: 40vw;
+    flex-basis: 40vw;
+    flex-grow: 1;
+    padding: 10px 20px;
+  }
+
+  .journey-articles__logo {
+    max-width: 100%;
+    max-height: 100px;
+    display: block;
+    margin: auto;
+  }
+
+  .journey__content {
+    padding: 10px 0;
+  }
+
+  .journey__title {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}

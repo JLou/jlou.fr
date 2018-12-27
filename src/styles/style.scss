@@ -8,17 +8,13 @@
 #F1E0C4,
 #FF6600,
 #6A7372
-
 */
-
-// * {
-//   border: 1px solid rgba(0, 0, 0, 0.3);
-// }
 @import "reset";
 @import "colors";
 @import "nav.scss";
 @import "about";
 @import "skills";
+@import "journey";
 @import "contact";
 ::selection {
   background: $highlight-color; /* WebKit/Blink Browsers */
@@ -33,7 +29,7 @@ body {
 }
 
 header {
-  background: url("../img/beach.jpg") fixed padding-box;
+  background: url("../img/beach.jpg") fixed padding-box, $secondary-background;
   background-size: auto;
   background-position: center;
   height: 350px;
