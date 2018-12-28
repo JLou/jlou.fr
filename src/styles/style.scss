@@ -37,6 +37,7 @@ header {
   color: $background-color;
   position: relative;
   overflow: hidden;
+  padding-top: 70px;
 }
 header div {
   height: calc(100% - 172px);
@@ -67,6 +68,7 @@ section {
   overflow: hidden;
   padding-left: 5vw;
   padding-right: 5vw;
+  padding-top: 60px;
 }
 body section:last-of-type::after {
   border: none;

@@ -1,13 +1,32 @@
 @import "colors";
 
 .nav__container {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0px;
   display: flex;
-  background: black;
   justify-content: space-between;
   z-index: 10;
+  background: transparent;
+  height: 70px;
+  width: 100%;
+  transition: 0.7s all;
+}
+
+.nav__link:hover {
+  color: $highlight-color;
+}
+
+.nav__container--scrolled {
+  background: black;
+  height: 60px;
+  .nav__link.active {
+    background: $highlight-color;
+  }
+  .nav__link:hover {
+    background: $background-color;
+    color: black;
+    text-decoration: none;
+  }
 }
 .nav__links {
   display: flex;
@@ -19,22 +38,15 @@
 
 .nav__link {
   display: block;
-  padding: 20px;
+  padding: 0 20px;
   cursor: pointer;
   color: $background-color;
   font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-transform: uppercase;
+  height: 60px;
+  line-height: 60px;
   transition: 0.2s ease-in-out;
-}
-
-.nav__link.active {
-  background: $highlight-color;
-}
-.nav__link:hover {
-  background: $background-color;
-  color: black;
-  text-decoration: none;
 }
 
 .nav__logo {

@@ -105,4 +105,17 @@ $(function() {
       offset: "75%"
     }
   );
+
+  $("#about").waypoint(
+    function(direction) {
+      if (direction === "up") {
+        $(".nav__container").removeClass("nav__container--scrolled");
+      } else {
+        $(".nav__container").addClass("nav__container--scrolled");
+      }
+    },
+    {
+      offset: "50%"
+    }
+  );
 });
