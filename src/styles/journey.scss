@@ -151,7 +151,8 @@
   font-family: "Merriweather", sans-serif;
   margin-bottom: 1rem;
   color: $secondary-color;
-  text-transform: uppercase;
+  // text-transform: uppercase;
+  font-variant: small-caps;
   letter-spacing: 0.1rem;
 }
 

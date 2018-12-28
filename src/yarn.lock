@@ -7090,6 +7090,11 @@ ware@^1.2.0:
   dependencies:
     wrap-fn "^0.1.0"
 
+waypoints@4.0.1:
+  version "4.0.1"
+  resolved "https://afa-nrepo.azure-paas.intraxa/repository/npmjs-group/waypoints/-/waypoints-4.0.1.tgz#09979a0573810b29627cba4366a284a062ec69c8"
+  integrity sha1-CZeaBXOBCylifLpDZqKEoGLsacg=
+
 wcwidth@^1.0.1:
   version "1.0.1"
   resolved "https://afa-nrepo.azure-paas.intraxa/repository/npmjs-group/wcwidth/-/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
