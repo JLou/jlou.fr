@@ -41,7 +41,7 @@
   padding: 0 20px;
   cursor: pointer;
   color: $background-color;
-  font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  // font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   text-transform: uppercase;
   height: 60px;
@@ -51,6 +51,10 @@
 
 .nav__logo {
   height: 50px;
+  * {
+    fill: white;
+    stroke: white;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */

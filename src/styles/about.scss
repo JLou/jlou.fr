@@ -19,8 +19,18 @@
     }
   }
 
-  h2 {
+  .about__title {
     margin-left: 300px;
+  }
+
+  .about-title__name {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .about-title__greetings {
+    font-size: 1.5rem;
+    font-style: italic;
   }
 
   .about__content {
@@ -28,7 +38,8 @@
     p {
       padding: 0 3vw;
       position: relative;
-      font-size: 1.3rem;
+      font-size: 1rem;
+      line-height: 1.3rem;
     }
   }
 }

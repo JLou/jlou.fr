@@ -4,13 +4,11 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 
   .skills__title {
     text-align: center;
     border-bottom: 2px solid $highlight-color;
-    font-family: "Scope One", serif;
-    padding: 0 3rem;
   }
 
   .skills__content {
@@ -45,7 +43,7 @@
 
   .skills-chart__title {
     font-size: 2rem;
-    font-family: "Scope One", serif;
+    font-family: $title-font;
   }
 }
 /* Extra small devices (phones, 600px and down) */

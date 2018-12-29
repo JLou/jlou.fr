@@ -3,20 +3,20 @@
       fixed,
     url("../img/contact-bg-bw.jpg") no-repeat 50% 100%, black no-repeat fixed;
   background-size: auto;
-  background-position-y: 200%;
   background-attachment: fixed, fixed;
 
-  min-height: 400px;
+  // min-height: 400px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
 
   .contact__title {
     display: inline-block;
-    margin: 5vh auto 6vh auto;
-    padding: 0 3rem 0 3rem;
+    color: inherit;
+    // margin: 5vh auto 6vh auto;
+    // padding: 0 3rem 0 3rem;
   }
 
   .contact__container {
@@ -40,6 +40,7 @@
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .contact-socials__icon {
     margin: 20px;

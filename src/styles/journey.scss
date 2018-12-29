@@ -141,14 +141,14 @@
 .timeline__title {
   font-size: 1.3rem;
   margin-bottom: 1rem;
-  font-family: "Merriweather", "Helvetica", sans-serif;
+  font-family: $title-font;
   //   font-weight: bold;
   color: $highlight-color;
 }
 
 .timeline__company {
   font-size: 1.1rem;
-  font-family: "Merriweather", sans-serif;
+  font-family: $title-font;
   margin-bottom: 1rem;
   color: $secondary-color;
   // text-transform: uppercase;
