@@ -144,6 +144,15 @@
   font-family: $title-font;
   //   font-weight: bold;
   color: $highlight-color;
+  min-height: 40px;
+}
+
+.timeline__title--right {
+  margin-right: 70px;
+}
+
+.timeline__title--left {
+  margin-left: 70px;
 }
 
 .timeline__company {
@@ -151,9 +160,8 @@
   font-family: $title-font;
   margin-bottom: 1rem;
   color: $secondary-color;
-  // text-transform: uppercase;
-  font-variant: small-caps;
-  letter-spacing: 0.1rem;
+  border-bottom: 2px solid $secondary-color;
+  padding-bottom: 2px;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */

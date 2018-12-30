@@ -113,7 +113,7 @@ a {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 40px;
+    font-size: 60px;
     margin: 0 auto;
     display: inline-block;
     text-align: center;
@@ -121,15 +121,15 @@ a {
   }
   header {
     height: 220px;
+    padding-top: 0;
 
     div {
       height: auto;
-      margin-top: 40px;
     }
   }
 
   .section__title {
-    font-size: 2rem;
+    font-size: 3rem;
     line-break: strict;
   }
 }
