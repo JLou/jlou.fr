@@ -4,7 +4,7 @@
     url("../img/contact-bg-bw.jpg") no-repeat 50% 100%, black no-repeat fixed;
   background-size: auto;
   background-attachment: fixed, fixed;
-
+  position: relative;
   // min-height: 400px;
   color: white;
   display: flex;
@@ -12,6 +12,10 @@
   justify-content: flex-start;
   align-items: stretch;
 
+  * {
+    position: relative;
+    z-index: 20;
+  }
   .contact__title {
     display: inline-block;
     color: inherit;
@@ -46,6 +50,19 @@
     margin: 20px;
     font-size: 4rem;
     padding: 10px;
+  }
+
+  .contact__image {
+    display: none;
+  }
+}
+
+@keyframes image-pulse {
+  0% {
+    filter: drop-shadow(0px 0px 5px gray);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 10px white);
   }
 }
 
@@ -124,5 +141,18 @@
   }
   51% {
     opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #contact .contact__image {
+    position: absolute;
+    display: block;
+    width: 200px;
+    right: 0;
+    height: auto;
+    bottom: 0;
+    animation: image-pulse 2s linear 0s alternate infinite both;
+    opacity: 0.5;
   }
 }

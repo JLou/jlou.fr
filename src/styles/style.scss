@@ -133,3 +133,21 @@ a {
     background-position: 0 -72px;
   }
 }
+
+.acknowledgement__container {
+  margin: auto;
+  a {
+    color: $highlight-color;
+    display: inline-block;
+  }
+
+  a:hover {
+    color: white;
+    animation: jello 1s ease-in 0s infinite both;
+  }
+}
+
+.acknowledgement__line {
+  text-align: center;
+  padding-bottom: 2px;
+}
