@@ -89,6 +89,14 @@ $(function() {
     }
   );
 
+  window.onscroll = () => {
+    let currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 50) {
+      $(".nav__container").removeClass("nav__container--scrolled");
+    } else {
+      $(".nav__container").addClass("nav__container--scrolled");
+    }
+  };
   $("footer").waypoint(
     function(direction) {
       var activeSection = $(this.element);
@@ -108,11 +116,11 @@ $(function() {
 
   $("#about").waypoint(
     function(direction) {
-      if (direction === "up") {
-        $(".nav__container").removeClass("nav__container--scrolled");
-      } else {
-        $(".nav__container").addClass("nav__container--scrolled");
-      }
+      // if (direction === "up") {
+      //   $(".nav__container").removeClass("nav__container--scrolled");
+      // } else {
+      //   $(".nav__container").addClass("nav__container--scrolled");
+      // }
     },
     {
       offset: "50%"
