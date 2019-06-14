@@ -42,32 +42,6 @@ $(function() {
     } // End if
   });
 
-  // let f = box => {
-  //   if (box.classList.contains("chart")) {
-  //     var chart = $(box);
-
-  //     let delay = Number((box.dataset.wowDelay || "0s").slice(0, -1)) * 1000;
-  //     setTimeout(() => {
-  //       chart
-  //         .circleProgress({
-  //           startAngle: -Math.PI / 2,
-  //           animation: { duration: 3000, easing: "easeOutBounce" },
-  //           fill: { gradient: ["#ff6600", "#CE534D"] },
-  //           size: 150
-  //         })
-  //         .on("circle-animation-progress", function(
-  //           event,
-  //           progress,
-  //           stepValue
-  //         ) {
-  //           $(this)
-  //             .find("strong")
-  //             .html(Math.round(100 * stepValue) + "<em>%</em>");
-  //         });
-  //     }, delay);
-  //   }
-  // };
-
   new WOW({
     callback: chartHandler
   }).init();
@@ -89,14 +63,6 @@ $(function() {
     }
   );
 
-  window.onscroll = () => {
-    let currentScrollPos = window.pageYOffset;
-    if (currentScrollPos < 50) {
-      $(".nav__container").removeClass("nav__container--scrolled");
-    } else {
-      $(".nav__container").addClass("nav__container--scrolled");
-    }
-  };
   $("footer").waypoint(
     function(direction) {
       var activeSection = $(this.element);
@@ -114,16 +80,17 @@ $(function() {
     }
   );
 
-  $("#about").waypoint(
-    function(direction) {
-      // if (direction === "up") {
-      //   $(".nav__container").removeClass("nav__container--scrolled");
-      // } else {
-      //   $(".nav__container").addClass("nav__container--scrolled");
-      // }
-    },
-    {
-      offset: "50%"
+  //Handle navbar change on scroll
+  window.onscroll = () => {
+    let currentScrollPos = window.pageYOffset;
+    if (currentScrollPos < 50) {
+      document
+        .querySelector(".nav__container")
+        .classList.remove("nav__container--scrolled");
+    } else {
+      document
+        .querySelector(".nav__container")
+        .classList.add("nav__container--scrolled");
     }
-  );
+  };
 });
