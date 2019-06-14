@@ -47,23 +47,26 @@ $(function() {
     }
   };
 
-  const options = {
+  const threshold = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1];
+  var options = {
     root: null,
-    threshold: 0
+    threshold
   };
 
-  let callback = function(entries) {
-    var h = Math.max(
+  var callback = function(entries) {
+    const h = Math.max(
       document.documentElement.clientHeight,
       window.innerHeight || 0
     );
-    entries.forEach((e, i) => {
+    entries.forEach(e => {
       if (e.intersectionRect.height / h > 0.55) {
-        let a = document.querySelector(`a[href="#${e.target.id}"]`);
-        a.classList.add("active");
+        document
+          .querySelector(`a[href="#${e.target.id}"]`)
+          .classList.add("active");
       } else {
-        let b = document.querySelector(`a[href="#${e.target.id}"]`);
-        b.classList.remove("active");
+        document
+          .querySelector(`a[href="#${e.target.id}"]`)
+          .classList.remove("active");
       }
     });
   };
