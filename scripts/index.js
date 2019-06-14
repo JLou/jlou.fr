@@ -59,20 +59,18 @@ $(function() {
     );
     entries.forEach((e, i) => {
       if (e.intersectionRect.height / h > 0.55) {
-        document
-          .querySelector(`a[href="#${e.target.id}"]`)
-          .classList.add("active");
+        let a = document.querySelector(`a[href="#${e.target.id}"]`);
+        a.classList.add("active");
       } else {
-        document
-          .querySelector(`a[href="#${e.target.id}"]`)
-          .classList.remove("active");
+        let b = document.querySelector(`a[href="#${e.target.id}"]`);
+        b.classList.remove("active");
       }
     });
   };
 
   var observer = new IntersectionObserver(callback, options);
 
-  let target = document.querySelectorAll("section, header, footer");
+  let target = document.querySelectorAll("section, footer");
 
   target.forEach(e => {
     observer.observe(e);
