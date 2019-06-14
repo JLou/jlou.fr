@@ -3,7 +3,6 @@ import "jquery-circle-progress";
 import WOW from "wow.js";
 import chartHandler from "./charts";
 window.jQuery = $;
-require("waypoints/lib/jquery.waypoints");
 
 $(function() {
   $("a").on("click", function(event) {
@@ -34,40 +33,6 @@ $(function() {
     callback: chartHandler
   }).init();
 
-  $("section, header, footer").waypoint(
-    function(direction) {
-      var activeSection = $(this.element);
-      if (direction === "up") {
-        activeSection = $(this.element).prev();
-      }
-
-      var sectionId = activeSection[0].id;
-      $(".nav__link").removeClass("active");
-      let el = $('.nav__link[href="#' + sectionId + '"]');
-      el.addClass("active");
-    },
-    {
-      offset: "25%"
-    }
-  );
-
-  $("footer").waypoint(
-    function(direction) {
-      var activeSection = $(this.element);
-      if (direction === "up") {
-        activeSection = $(this.element).prev();
-      }
-
-      var sectionId = activeSection[0].id;
-      $(".nav__link").removeClass("active");
-      let el = $('.nav__link[href="#' + sectionId + '"]');
-      el.addClass("active");
-    },
-    {
-      offset: "75%"
-    }
-  );
-
   //Handle navbar change on scroll
   window.onscroll = () => {
     let currentScrollPos = window.pageYOffset;
@@ -81,4 +46,35 @@ $(function() {
         .classList.add("nav__container--scrolled");
     }
   };
+
+  const options = {
+    root: null,
+    threshold: 0
+  };
+
+  let callback = function(entries) {
+    var h = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    );
+    entries.forEach((e, i) => {
+      if (e.intersectionRect.height / h > 0.55) {
+        document
+          .querySelector(`a[href="#${e.target.id}"]`)
+          .classList.add("active");
+      } else {
+        document
+          .querySelector(`a[href="#${e.target.id}"]`)
+          .classList.remove("active");
+      }
+    });
+  };
+
+  var observer = new IntersectionObserver(callback, options);
+
+  let target = document.querySelectorAll("section, header, footer");
+
+  target.forEach(e => {
+    observer.observe(e);
+  });
 });
