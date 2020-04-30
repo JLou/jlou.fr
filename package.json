@@ -13,7 +13,7 @@
     "sass": "1.15.2"
   },
   "dependencies": {
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-circle-progress": "^1.2.2",
     "parcel-plugin-imagemin": "^2.1.1",
     "wow.js": "1.2.2"
