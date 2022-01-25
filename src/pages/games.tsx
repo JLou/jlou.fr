@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "./main.css";
 import "@fontsource/source-code-pro";
@@ -55,7 +55,7 @@ const IndexPage = () => {
             <figure className="game-figure">
               <GatsbyImage
                 className="game-cover"
-                image={coverImage.childImageSharp.gatsbyImageData}
+                image={getImage(coverImage)}
                 alt={`Couverture de ${name}`}
               />
               <figcaption className="game-title">
