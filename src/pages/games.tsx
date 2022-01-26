@@ -15,19 +15,18 @@ function hexHtmlToString(str) {
 
 const IndexPage = () => {
   const {
-    allBggGame: { edges },
+    allGame: { edges },
   } = useStaticQuery(graphql`
-    query {
-      allBggGame {
+    {
+      allGame {
         edges {
           node {
             id
             name
-            status {
-              own
-              wishlist
-            }
-            coverImage {
+            wishlist
+            own
+            imageUrl
+            imageFile {
               childImageSharp {
                 gatsbyImageData(
                   layout: FIXED
@@ -44,18 +43,18 @@ const IndexPage = () => {
     }
   `);
 
-  const owned = edges.filter((game) => game.node.status.own);
-  const wishlist = edges.filter((game) => game.node.status.wishlist);
+  const owned = edges.filter((game) => game.node.own);
+  const wishlist = edges.filter((game) => game.node.wishlist);
   return (
     <Layout>
       <h2>Ma collection</h2>
       <div className="gamelist">
-        {owned.map(({ node: { name, coverImage, id } }) => (
+        {owned.map(({ node: { name, imageFile, id, ...rest } }) => (
           <article className="game-item" key={id}>
             <figure className="game-figure">
               <GatsbyImage
                 className="game-cover"
-                image={getImage(coverImage)}
+                image={getImage(imageFile)}
                 alt={`Couverture de ${name}`}
               />
               <figcaption className="game-title">
@@ -68,12 +67,12 @@ const IndexPage = () => {
 
       <h2>Ma wishlist</h2>
       <div className="gamelist">
-        {wishlist.map(({ node: { name, coverImage, id } }) => (
+        {wishlist.map(({ node: { name, imageFile, id } }) => (
           <article className="game-item" key={id}>
             <figure className="game-figure">
               <GatsbyImage
                 className="game-cover"
-                image={coverImage.childImageSharp.gatsbyImageData}
+                image={getImage(imageFile)}
                 alt=""
               />
               <figcaption className="game-title">{name}</figcaption>
