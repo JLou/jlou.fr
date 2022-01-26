@@ -13,14 +13,64 @@ body {
 .navbar {
   box-shadow: 0 0 1rem #000000b0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
 }
 
 .nav-links {
   display: flex;
+  flex-direction: column;
   margin-left: 2vw;
 }
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .nav-links {
+  display: none;
+}
+
+.navbar h1 {
+  margin: 0;
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-toggle-label {
+  flex-grow: 1;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+@media only screen and (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+  }
+
+  .nav-links {
+    flex-direction: row;
+  }
+
+  .menu-toggle-label {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #menu-toggle:checked + .nav-links {
+    display: flex;
+  }
+}
+
 .nav-link {
   color: var(--secondary);
   padding: 0 2rem;
@@ -29,17 +79,9 @@ body {
 .nav-link:hover {
   background-color: #393d3a;
 }
-.navbar h1 {
-  margin: 0;
-  padding: 1rem;
-}
 
 main {
   padding: 0 4vw;
-}
-
-h1 {
-  font-weight: 400;
 }
 
 .gamelist {
